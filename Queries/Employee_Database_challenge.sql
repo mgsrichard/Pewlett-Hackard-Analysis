@@ -282,4 +282,66 @@ WHERE (t.to_date = '9999-01-01')
 	AND (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 ORDER BY e.emp_no, t.to_date DESC;
 
+--For analysis section
+--Do mentorship employees come from the right departments and in the right proportions? Will there be enough of them to 
+--be spread evenly in their departments
+--look at counts for all employees by department
+--pull in departments into mentorship_eligibility and do counts
 
+
+--Pull department info into active employees list
+
+SELECT e.emp_no, 
+		e.first_name, 
+		e.last_name, 
+		de.dept_no, 
+		d.dept_name
+INTO active_depts
+FROM employees AS e
+LEFT OUTER JOIN dept_emp AS de
+	ON e.emp_no = de.emp_no
+JOIN departments as d
+	ON de.dept_no = d.dept_no
+WHERE de.to_date = '9999-01-01'
+ORDER BY d.dept_no;
+
+--Group active by departments and count
+SELECT COUNT(emp_no), dept_name
+INTO active_depts_counts
+FROM active_depts
+GROUP BY dept_name
+ORDER BY dept_name;
+	 
+	  
+	  
+
+--Pull department info into mentorship_eligibility 
+
+SELECT me.emp_no, 
+		me.first_name, 
+		me.last_name, 
+		de.dept_no, 
+		d.dept_name
+INTO mentorship_depts
+FROM mentorship_eligibility AS me
+LEFT OUTER JOIN dept_emp AS de
+	ON me.emp_no = de.emp_no
+JOIN departments as d
+	ON de.dept_no = d.dept_no
+WHERE de.to_date = '9999-01-01'
+ORDER BY d.dept_no;
+
+--Group mentorship employee departments and count
+SELECT COUNT(emp_no), dept_name
+INTO mentorship_depts_counts
+FROM mentorship_depts
+GROUP BY dept_name
+ORDER BY dept_name;
+
+--Create a new table that compares mentorship and active department counts
+SELECT adc.dept_name, adc.count as active_count, mdc.count as mentorship_count
+INTO mentorship_active_compare
+FROM active_depts_counts as adc
+JOIN mentorship_depts_counts as mdc
+	ON adc.dept_name = mdc.dept_name
+ORDER BY dept_name;
