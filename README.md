@@ -14,11 +14,7 @@ There are a huge number of employees who will be ready to retire soon.  More tha
 ![retiring_titles.csv screenshot](https://github.com/mgsrichard/Pewlett-Hackard-Analysis/blob/main/retiring_titles.png)
   - The bulk of the retirements are coming in two positions, Senior Engineer and Senior Staff. This makes sense since these are the older and more experienced employees.  
   - In light of this, the mentorship program seems like a really great idea, to bring the next generation of employees into the ranks of senior positions.
-  
-#### Prospective employees by department
-![retiring by dept](https://github.com/mgsrichard/Pewlett-Hackard-Analysis/blob/main/er_elig_depts.png)
-  - The employees who will be retiring soon are distributed across all departments in the company, so any mentorship program needs to be for all departments.
-
+ 
 #### Do we have enough people and the right people to be mentors?
 We created a list of all the employees born during 1965 as a proposed list of mentors.  Let's look at how many there are and if they are spread evenly through departments and titles/positions.
 
