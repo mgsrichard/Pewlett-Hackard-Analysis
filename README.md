@@ -32,3 +32,13 @@ We created a list of all the employees born during 1965 as a proposed list of me
 ## Summary
 A big demographic wave is coming for Pewlett-Hackard, with 72,458 employees coming eligible for retirement soon. Luckily, the employees who we have identified for the mentorship program are spread out evenly through the company, proportionally representing departments and job titles within the company.
 
+As a final note, if you should decide to widen the eligibility window for the mentorship program, and include those born in 1964 and 1963 as well, it would create a much larger pool of employees who could participate.  Here are tables showing the numbers of employees born in those years by job title.
+
+#### Employees born in 1964 by job title
+![mentorship 64](https://github.com/mgsrichard/Pewlett-Hackard-Analysis/blob/main/mentorship_counts_64.png)
+
+#### Employees born in 1963 by job title
+![mentorship 63](https://github.com/mgsrichard/Pewlett-Hackard-Analysis/blob/main/mentorship_counts_63.png)
+
+The addition of this group to the mentorship program could greatly increase the number particpating, which could be very helpful given the sheer number of employees who are about to start retiring.
+
